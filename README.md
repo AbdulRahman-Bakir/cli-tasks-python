@@ -1,6 +1,6 @@
 # CLI Backend Projects
 
-A collection of backend practice projects built as command-line (CLI) applications in Python.  
+A collection of backend practice projects built as command-line (CLIs) applications in Python.  
 Each task is isolated in its own folder with a separate virtual environment (excluded via `.gitignore`).
 
 ---
