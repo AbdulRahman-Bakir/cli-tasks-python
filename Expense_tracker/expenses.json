@@ -1,0 +1,37 @@
+[
+    {
+        "ID": 1,
+        "category": "Homse",
+        "Description": "Dinner",
+        "Amount": 450.0,
+        "Created_at": "2025-02-05 14:40:40"
+    },
+    {
+        "ID": 2,
+        "category": "Homse",
+        "Description": "Dinner",
+        "Amount": 450.0,
+        "Created_at": "2025-02-05 14:40:40"
+    },
+    {
+        "ID": 3,
+        "category": "Hoe",
+        "Description": "Dinner",
+        "Amount": 450.0,
+        "Created_at": "2025-03-05 14:40:47"
+    },
+    {
+        "ID": 4,
+        "category": "Hoe",
+        "Description": "Dinner",
+        "Amount": 450.0,
+        "Created_at": "2025-02-05 14:40:48"
+    },
+    {
+        "ID": 5,
+        "category": "somethign",
+        "Description": "Lunch",
+        "Amount": 20.0,
+        "Created_at": "2025-07-24 19:25:30"
+    }
+]
