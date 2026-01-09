@@ -3,7 +3,8 @@ import requests
 import sys
 import json 
 import time
-
+from python_dotenv import load_dotenv
+load_dotenv()
 CACHE_FILE = "cache.json"
 CACHE_TTL = 60
 
