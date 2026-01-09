@@ -9,3 +9,7 @@
 *.log
 # Environment variable files
 .env
+
+# Ignore compiled Python files
+*.pyc
+cache.json
