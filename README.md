@@ -86,6 +86,8 @@ python task_tracker.py delete <task_id>
 
 Track your daily expenses with categories, monthly budgets, and CSV export functionality.
 
+> 📌 Based on the [Expense Tracker](https://roadmap.sh/projects/expense-tracker) project from [roadmap.sh](https://roadmap.sh).
+
 **Location:** `Expense_tracker/`
 
 **Setup:**
@@ -157,6 +159,8 @@ python expense.py summary --month 3 --budget 500.00
 ### 3. GitHub Activity Fetcher
 
 Fetch and display GitHub user activity events with response caching to reduce API calls.
+
+> 📌 Based on the [GitHub User Activity](https://roadmap.sh/projects/github-user-activity) project from [roadmap.sh](https://roadmap.sh).
 
 **Location:** `Github-User_Activity/`
 
@@ -230,6 +234,8 @@ python github.py <github_username> <event_type>
 ### 4. Number Guessing Game
 
 An interactive CLI game where you guess a random number between 1 and 100 with multiple difficulty levels.
+
+> 📌 Based on the [Number Guessing Game](https://roadmap.sh/projects/number-guessing-game) project from [roadmap.sh](https://roadmap.sh).
 
 **Location:** `Guessing-Number/`
 
