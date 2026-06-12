@@ -35,6 +35,8 @@ Each project folder contains its own setup scripts. You can either use the provi
 
 A simple task management system that allows you to add, update, delete, and list tasks with status tracking.
 
+> 📌 Based on the [Task Tracker](https://roadmap.sh/projects/task-tracker) project from [roadmap.sh](https://roadmap.sh).
+
 **Location:** `Task_tracker/`
 
 **Setup:**
