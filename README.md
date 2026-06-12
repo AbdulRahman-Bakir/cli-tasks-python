@@ -13,6 +13,7 @@ Each project is isolated in its own folder and includes setup scripts for easy i
 | 2         | Expense Tracker CLI       | Track daily expenses with categories, budgets, and CSV export | colorama, tabulate |
 | 3         | GitHub Activity Fetcher   | Fetch and display GitHub user activity events with caching | requests, python-dotenv |
 | 4         | Number Guessing Game      | Interactive CLI number guessing game with difficulty levels | None (Python stdlib) |
+| 5         | GitHub Trending CLI       | Fetch and display trending GitHub repositories by time range | requests, tabulate |
 
 ---
 
@@ -269,6 +270,54 @@ python guessing.py
 4. Get hints if your guess is wrong
 5. Try to guess the number within your attempts limit
 6. Play again if desired
+
+---
+
+### 5. GitHub Trending CLI
+
+Fetch and display trending GitHub repositories, filtered by time range and sorted by star count.
+
+> 📌 Based on the [GitHub Trending CLI](https://roadmap.sh/projects/github-trending-cli) project from [roadmap.sh](https://roadmap.sh).
+
+**Location:** `Github-Trending/`
+
+**Setup:**
+
+**On Windows:**
+```bash
+cd Github-Trending
+init.bat
+```
+
+**On Linux/macOS:**
+```bash
+cd Github-Trending
+chmod +x init.sh run.sh
+./init.sh
+```
+
+**Usage:**
+
+**On Windows:**
+```bash
+run.bat --duration month --limit 20
+```
+
+**On Linux/macOS:**
+```bash
+./run.sh --duration month --limit 20
+```
+
+**Or directly:**
+```bash
+python trending-repos.py --duration month --limit 20
+```
+
+**Command-Line Arguments:**
+- `--duration` - Time range: `day`, `week`, `month`, or `year` (default: `week`)
+- `--limit` - Number of repositories to display, 1-100 (default: `10`)
+
+**Note:** "Trending" is approximated using the GitHub Search API as repositories created within the time range, sorted by stars. No authentication required.
 
 ---
 
