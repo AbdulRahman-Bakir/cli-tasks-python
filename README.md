@@ -14,6 +14,7 @@ Each project is isolated in its own folder and includes setup scripts for easy i
 | 3         | GitHub Activity Fetcher   | Fetch and display GitHub user activity events with caching | requests, python-dotenv |
 | 4         | Number Guessing Game      | Interactive CLI number guessing game with difficulty levels | None (Python stdlib) |
 | 5         | GitHub Trending CLI       | Fetch and display trending GitHub repositories by time range | requests, tabulate |
+| 6         | TMDB CLI                  | Fetch and display movies from TMDB by category (popular, top-rated, etc.) | requests, python-dotenv, tabulate |
 
 ---
 
@@ -318,6 +319,68 @@ python trending-repos.py --duration month --limit 20
 - `--limit` - Number of repositories to display, 1-100 (default: `10`)
 
 **Note:** "Trending" is approximated using the GitHub Search API as repositories created within the time range, sorted by stars. No authentication required.
+
+---
+
+### 6. TMDB CLI
+
+Fetch and display movies from The Movie Database (TMDB) by category, shown in a clean table.
+
+> 📌 Based on the [TMDB CLI](https://roadmap.sh/projects/tmdb-cli) project from [roadmap.sh](https://roadmap.sh).
+
+**Location:** `TMDB/`
+
+**Setup:**
+
+1. **Get a TMDB API Read Access Token:**
+   - Create a free account at [themoviedb.org](https://www.themoviedb.org/)
+   - Go to Settings → API and copy your **API Read Access Token** (v4 bearer token)
+
+2. **Set up the environment:**
+
+**On Windows:**
+```bash
+cd TMDB
+init.bat
+```
+
+**On Linux/macOS:**
+```bash
+cd TMDB
+chmod +x init.sh run.sh
+./init.sh
+```
+
+3. **Create a `.env` file** in the `TMDB/` folder (see `.env.example`):
+   ```
+   TMDB_API_KEY="your_tmdb_api_read_access_token_here"
+   ```
+
+**Note:** The `.env` file is gitignored and won't be committed.
+
+**Usage:**
+
+**On Windows:**
+```bash
+run.bat --type popular
+```
+
+**On Linux/macOS:**
+```bash
+./run.sh --type popular
+```
+
+**Or directly:**
+```bash
+python tmdb-app.py --type popular
+```
+
+**Command-Line Arguments:**
+- `--type` - Movie category (default: `popular`):
+  - `playing` - Now playing movies
+  - `popular` - Popular movies
+  - `top` - Top-rated movies
+  - `upcoming` - Upcoming movies
 
 ---
 
