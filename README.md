@@ -15,6 +15,7 @@ Each project is isolated in its own folder and includes setup scripts for easy i
 | 4         | Number Guessing Game      | Interactive CLI number guessing game with difficulty levels | None (Python stdlib) |
 | 5         | GitHub Trending CLI       | Fetch and display trending GitHub repositories by time range | requests, tabulate |
 | 6         | TMDB CLI                  | Fetch and display movies from TMDB by category (popular, top-rated, etc.) | requests, python-dotenv, tabulate |
+| 7         | Caching Proxy CLI         | HTTP proxy that forwards requests to an origin and caches responses | requests          |
 
 ---
 
@@ -381,6 +382,70 @@ python tmdb-app.py --type popular
   - `popular` - Popular movies
   - `top` - Top-rated movies
   - `upcoming` - Upcoming movies
+
+---
+
+### 7. Caching Proxy CLI
+
+A caching proxy server that forwards requests to an origin server, caches the responses, and serves repeated requests from the cache.
+
+> 📌 Based on the [Caching Server](https://roadmap.sh/projects/caching-server) project from [roadmap.sh](https://roadmap.sh).
+
+**Location:** `Caching-Proxy/`
+
+**Setup:**
+
+**On Windows:**
+```bash
+cd Caching-Proxy
+init.bat
+```
+
+**On Linux/macOS:**
+```bash
+cd Caching-Proxy
+chmod +x init.sh run.sh
+./init.sh
+```
+
+**Usage:**
+
+**On Windows:**
+```bash
+run.bat --port 3000 --origin https://dummyjson.com
+run.bat --clear-cache
+```
+
+**On Linux/macOS:**
+```bash
+./run.sh --port 3000 --origin https://dummyjson.com
+./run.sh --clear-cache
+```
+
+**Or directly:**
+```bash
+python caching-proxy.py --port 3000 --origin https://dummyjson.com
+python caching-proxy.py --clear-cache
+```
+
+**Command-Line Arguments:**
+- `--port` - Port the proxy listens on (default: `3000`)
+- `--origin` - URL of the server to forward requests to (default: `https://dummyjson.com`)
+- `--clear-cache` - Delete the cache file and exit without starting the server
+
+**How it works:**
+1. A request to `http://localhost:3000/products` is forwarded to `https://dummyjson.com/products`.
+2. The response is returned to the client and stored in the cache, with the header `X-Cache: MISS`.
+3. The same request again is served from the cache without contacting the origin, with `X-Cache: HIT`.
+4. If the origin cannot be reached, the proxy responds with `502 Bad Gateway`.
+
+**Example:**
+```bash
+curl -i http://localhost:3000/products/1   # X-Cache: MISS
+curl -i http://localhost:3000/products/1   # X-Cache: HIT
+```
+
+**Data Storage:** Cached responses are stored in `cache.json` (ignored by git).
 
 ---
 
